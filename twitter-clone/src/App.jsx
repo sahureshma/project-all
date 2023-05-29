@@ -1,11 +1,12 @@
-import React from "react"
-function App() {
+import './App.css';
+import SignIn from './component/SignIn/SignIn';
 
+function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="app">
+      <SignIn/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
