@@ -1,26 +1,62 @@
 import * as React from 'react';
 import {useState} from 'react';
+import {useNavigate} from 'react-router';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import style from './signup.module.css'
+import style from './SignUp.module.css'
 import Button from '@mui/material/Button';
 
-
 export default function Signup() {
+
+  const navigate = useNavigate();
   const [input, setInput]=useState({
     name:"",
     email:"",
     phone:"",
     password:""
   })
+//regex for name, password, email & phone
+  const handleChange=(e)=>{
 
+    if(e.target.value.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")!=null){         //passsword
+      setInput({
+        ...input,
+        [e.target.name]: e.target.value,})
+    }
+    else if(e.target.value.match("^(?:\d{10}|\w+@\w+\.\w{2,3})$")!=null){               phone
+      setInput({
+        ...input,
+        [e.target.name]: e.target.value,})
+    }
+    else if(e.target.value.match("^[a-zA-Z ]*$")!=null) {
+      setInput({
+        ...input,
+        [e.target.name]: e.target.value,})
+    }
+    
+  }
+//signupbutton     //not empty field
   const handleData=(e)=>{
     e.preventDefault();
+    if((!input.name && !input.phone && !input.password)){
+      return alert("Please Enter all fields");
+    }
+    else if(!input.name){
+      return alert("Please Enter Name");
+    }
+    else if(!input.phone){
+      return alert("Please Enter Mobile no.");
+    }
+    else if(!input.password){
+      return alert("Please Enter Password");
+    }
     localStorage.setItem(input.email, JSON.stringify(input));
+    alert("Sign-Up Successfully");
+    navigate("/");                            // navigate to sign in page
   };
   return (
     <>
-    
+    <div className={style.body}>
     <Box className={style.signuppage}
       component="form"
       sx={{
@@ -29,9 +65,11 @@ export default function Signup() {
       Validate
       autoComplete="off"
     >
-        <h1>Create your account</h1>
+
+      <h1>Create your account</h1>
       <div className={style.signup1}>
-        <TextField 
+
+      <TextField 
           className={style.textfield}
           required
           id="filled-required"
@@ -39,18 +77,12 @@ export default function Signup() {
           variant="filled"
           name="name"
           value={input.name}
-          onChange={(e)=> 
-            setInput({
-              ...input,
-              [e.target.name]: e.target.value,})
-            }
-          // ref={name}
-          sx={{
-            width:'70%',
-            border: "1px solid"
+          onChange={handleChange}
+            style={{
+            width:'70%'
           }}
-        />
-        <TextField
+      />
+        {/* <TextField
           className={style.textfield}
           required
           id="filled-required"
@@ -66,7 +98,7 @@ export default function Signup() {
           style={{
             width:'70%'
           }}
-        />
+        /> */}
         <TextField
           className={style.textfield}
           required
@@ -85,13 +117,11 @@ export default function Signup() {
             width:'70%',
           }}
         />
-        {/* <select name='month'>
-            <option value='month'>Month</option>
-            <option value='year'>Year</option>
-            <option value='day'>Month</option>
-        </select> */}
+        
         <TextField
           className={style.textfield}
+          required
+          helperText="Atleast 8 characters."
           id="filled-password-input"
           label="password"
           type="password"
@@ -120,6 +150,7 @@ export default function Signup() {
             Sign Up</Button>
       
     </Box>
+    </div>
     </>
   );
 }

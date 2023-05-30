@@ -1,12 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.body{
+    background-color: #8b8c8d;
+    display: flex;
+    justify-content: center;
+    
+    
+}
 .signuppage{
     display: flex;
     flex-direction: column;
     height: 90vh;
-    width: 45vw;
+    width: 35vw;
     justify-content: center;
     align-items: center;
     background-color: rgb(248, 245, 245);
     border-radius: 15px;
+    margin: 5vh 0;
 }
 .signup1{
     display: flex;
@@ -14,12 +26,12 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin: 50px 0px;
 }
-.textfield{
+/* .textfield{
    display: flex;
-}
+   border: 1px solid lightgray;
+} */
 .btnSignup{
     width: 70%;
     height: 10%;
