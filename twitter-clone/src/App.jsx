@@ -1,16 +1,15 @@
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Signup from './component/SignUp/SignUp';
 import SignIn from './component/SignIn/SignIn';
 import Home from './component/Home';
-import SignUp from './component/SignUp';
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 
 function App() {
 
-  return (
-    
+  return (    
       <Router>
         <Routes>
-          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/SignUp" element={<Signup/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/"  element={<SignIn/>}/>
         </Routes>
