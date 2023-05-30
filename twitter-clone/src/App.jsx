@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<SignIn/>}/>
+        {/* <Route path='/' element={<SignIn/>}/> */}
       </Routes>
     <div className="App">
       {/* <SignIn/> */}

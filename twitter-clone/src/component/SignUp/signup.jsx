@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import style from './signup.module.css'
 import Button from '@mui/material/Button';
 
+
 export default function Signup() {
   const [input, setInput]=useState({
     name:"",
@@ -44,8 +45,9 @@ export default function Signup() {
               [e.target.name]: e.target.value,})
             }
           // ref={name}
-          style={{
-            width:'70%'
+          sx={{
+            width:'70%',
+            border: "1px solid"
           }}
         />
         <TextField
