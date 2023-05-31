@@ -1,25 +1,31 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Signup from './component/SignUp/SignUp';
+// import Signup from './component/SignUp/SignUp';
 import SignIn from './component/SignIn/SignIn';
-import Home from './component/Home';
+import HomePage from './component/HomePage/HomePage';
+import SignUp from './component/SignUp/signup'
+
 
 function App() {
 
-  return (    
-      <Router>
+  return (
+     
+      <Router >
         <Routes>
-          <Route path="/SignUp" element={<Signup/>}/>
-          <Route path="/home" element={<Home/>}/>
-          <Route path="/"  element={<SignIn/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route  path="/" element={<HomePage/>}/>
+          <Route path="/signin"  element={<SignIn/>}/>
+    
+
+
         </Routes>
        
       
       </Router>
     
-      // <SignIn/>
+     
    
   );
-}
+} 
 
 export default App;
