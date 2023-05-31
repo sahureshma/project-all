@@ -31,17 +31,11 @@ export default function Signup() {
         return alert("Please enter valid email");
       }
       else if(!regexPassword.test(input.password)){
-        console.log(input.password);
+        console.log(input.password)
         return alert("Please enter valid Password");
       }
 
-        const userRegistrationdata=JSON.parse(
-          localStorage.getItem(email))
-          console.log(userRegistrationdata);
 
-          if(userRegistrationdata.email===input.email){
-            return alert("Email id is linked with another account. Please Enter new email id.")
-          }
     // if((!input.name && !input.phone && !input.password)){
     //   return alert("Please Enter all fields");
     // }
