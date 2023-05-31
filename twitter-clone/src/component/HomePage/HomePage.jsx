@@ -2,6 +2,7 @@ import React from 'react'
 import './HomePage.css'
 import { FaHome, FaHashtag, FaRegBell, FaTwitter, FaEnvelope, FaRegBookmark, FaClipboardList, FaUserAlt, FaMehBlank } from 'react-icons/fa'
 import Tweets from './Tweets'
+import RightBar from './RightBar/RightBar'
 
 
 
@@ -71,6 +72,7 @@ function HomePage() {
     </div>
     <div>
       <Tweets/>
+      <RightBar/>
     </div>
     </>
     
