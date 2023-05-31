@@ -5,12 +5,12 @@ import {useNavigate} from 'react-router';
 function SignIn(){
   const navigate = useNavigate();
   
-  const[phone,setPhone]=useState("");
+  const[email,setEmail]=useState("");
   const[Password,setPassword]=useState("");
   const phoneRegex=/^[7-9]\d{9}$/;
   const PasswordRegex=/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-  const handlePhonechange= (event)=>{
-    setPhone(event.target.value);
+  const handleEmailchange= (event)=>{
+    setEmail(event.target.value);
   };
   const handlePasswordchange= (event)=>{
     setPassword(event.target.value);
@@ -18,20 +18,42 @@ function SignIn(){
   const handleSumbit= (event)=>{
     event.preventDefault();
  
-  if(!phoneRegex.test(phone)){
-    alert("enter valid phone number")
-  } else if (!PasswordRegex.test(Password)){
+  // if(!phoneRegex.test(email)){
+  //   alert("enter valid Email id")
+  // } else
+   if (!PasswordRegex.test(Password)){
     alert("enter valid password");
   } else{
     const userRegistrationdata=JSON.parse(
-      localStorage.getItem("userRegistrationdata")
+      localStorage.getItem(email)
     );
-    if(userRegistrationdata && userRegistrationdata.phone===phone){
-      navigate("/home");
-    } else {
-      alert("user not registered")
-    }
+    console.log(userRegistrationdata);
+    if(userRegistrationdata && userRegistrationdata.email===email){
+           if(userRegistrationdata.password===Password){
+            alert("Login Successfully")    
+            navigate("/");
+        } else {
+          alert("Please Enter Correct Password");
+        }
+      }else {
+        alert("user not registered")
+      }
   }
+
+//   const userRegistrationdata=JSON.parse(
+//     localStorage.getItem(email)
+//   );
+//   console.log(userRegistrationdata);
+//   if(userRegistrationdata && userRegistrationdata.email===email){
+//      if(userRegistrationdata.password===Password){
+//       alert("Login Successfully")    
+//       navigate("/home");
+//   } else {
+//     alert("Please Enter Correct Password");
+//   }
+// }else {
+//   alert("user not registered")
+// }
 };
     return(
         <div className="App">
@@ -52,10 +74,10 @@ function SignIn(){
           <form>
             <input
              type="text"
-             name="phone"
-              placeholder="phone or email "
-              value={phone}
-            onChange={handlePhonechange}
+             name="email"
+              placeholder=" email id"
+              value={email}
+            onChange={handleEmailchange}
             />
             <input
             type="password"
