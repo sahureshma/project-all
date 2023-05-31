@@ -1,0 +1,13 @@
+.posts{
+    width: 50%;
+    margin-left: 25%;
+    border-right: 1px solid white;
+}
+.posts_home{
+    width: 50%;
+    position: fixed;
+    top: 0;
+    padding: 15px ;
+    font-weight: 650;
+    border-bottom: 1px solid rgb(207, 207, 216);
+}

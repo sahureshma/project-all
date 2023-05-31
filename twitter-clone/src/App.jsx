@@ -1,24 +1,25 @@
 import './App.css';
 import SignIn from './component/SignIn/SignIn';
-import Home from './component/Home';
+// import HomePage from './component/HomePage/HomePage';
 import SignUp from './component/SignUp';
+import HomePage from './component/HomePage/HomePage';
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 
 function App() {
 
   return (
-    
-      <Router>
+     
+      <Router >
         <Routes>
           <Route path="/signup" element={<SignUp/>}/>
-          <Route path="/home" element={<Home/>}/>
-          <Route path="/"  element={<SignIn/>}/>
+          <Route  path="/" element={<HomePage/>}/>
+          <Route path="/signin"  element={<SignIn/>}/>
         </Routes>
        
       
       </Router>
     
-      // <SignIn/>
+     
    
   );
 }

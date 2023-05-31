@@ -1,0 +1,58 @@
+.create_container{
+    padding-top: 60px;
+    border-right: 1px solid  rgb(207, 207, 216);
+   border-bottom: 1px solid  rgb(207, 207, 216);
+
+}
+.first{
+    display: flex;
+    padding:  0 20px;
+    align-items: center;
+}
+.img_create{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.img_create img{
+    width: 100%;
+    height: 100%;
+
+}
+.inp_create{
+    margin-left: 20px;
+
+}
+.inp_control{
+    border: none;
+    outline: none;
+}
+.second{
+    margin-left: 20px;
+    margin-top: 15px;
+    display: flex;
+}
+.icon_tweet{
+    margin: 0 6px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(66, 187, 201);
+}
+.icon_create{
+    width: 50%;
+}
+.btn_create{
+    width: 50%;
+    text-align: right;
+    margin: 20px ;
+}
+.btn_create a{
+    color: #fff;
+    background: rgb(66, 187, 201);
+    outline: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
