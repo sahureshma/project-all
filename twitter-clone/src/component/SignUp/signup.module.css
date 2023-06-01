@@ -3,11 +3,14 @@
     padding: 0px;
 }
 .body{
-    background-color: #8b8c8d;
+    background-color: #359cf0;
     display: flex;
     justify-content: center;
     
     
+}
+h1{
+    text-align: center;
 }
 .signuppage{
     display: flex;
