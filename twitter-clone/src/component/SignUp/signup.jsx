@@ -11,7 +11,7 @@ export default function Signup() {
   const regexPhone= /^(?:\d{10}|\w+@\w+\.\w{2,3})$/;
   const regexName=/^[a-zA-Z ]{2,30}$/;
   
-
+// usestate --true or false --ternary op
   const navigate = useNavigate();
   const [input, setInput]=useState({
     name:"",

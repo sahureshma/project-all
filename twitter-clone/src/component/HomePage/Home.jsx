@@ -6,7 +6,6 @@ import Post from './MiddleBar/Post'
 import RightBar from './RightBar/RightBar'
 
 
-
 function Home() {
   return (
     <div >
@@ -15,7 +14,6 @@ function Home() {
     <CreateTweet/>
     <Post/>
     <RightBar/>
- 
     </div>
   )
 }

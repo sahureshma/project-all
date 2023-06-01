@@ -12,9 +12,9 @@ function Whotofollow() {
 
     const getRandomItem=()=>{
         const shuffleData = data.sort(()=>0.5-Math.random());
-        console.log(shuffleData);
+        // console.log(shuffleData);
         const selecteditem=shuffleData.slice(0,4);
-        console.log(selecteditem);
+        // console.log(selecteditem);
         setRandomitem(selecteditem);
     };
 
