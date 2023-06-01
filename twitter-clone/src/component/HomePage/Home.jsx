@@ -3,6 +3,8 @@ import Sidebar from './LeftNavBar/Sidebar'
 import CreateTweet from './MiddleBar/CreateTweet'
 import Tweets from './MiddleBar/Tweets'
 import Post from './MiddleBar/Post'
+import RightBar from './RightBar/RightBar'
+
 
 
 function Home() {
@@ -12,7 +14,8 @@ function Home() {
     <Tweets/>
     <CreateTweet/>
     <Post/>
-   
+    <RightBar/>
+ 
     </div>
   )
 }

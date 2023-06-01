@@ -10,7 +10,7 @@ function SignIn(){
   
   const[email,setEmail]=useState("");
   const[Password,setPassword]=useState("");
-  const phoneRegex=/^[7-9]\d{9}$/;
+  const emailRegex=/(\<|^)[\w\d._%+-]+@(?:[\w\d-]+\.)+(\w{2,})(\>|$)/;
   const PasswordRegex=/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
   const handleEmailchange= (event)=>{
     setEmail(event.target.value);
@@ -21,9 +21,9 @@ function SignIn(){
   const handleSumbit= (event)=>{
     event.preventDefault();
  
-  // if(!phoneRegex.test(email)){
-  //   alert("enter valid Email id")
-  // } else
+  if(!emailRegex.test(email)){
+  alert("enter valid Email id")
+ } else
    if (!PasswordRegex.test(Password)){
     alert("enter valid password");
   } else{
