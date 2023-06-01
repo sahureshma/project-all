@@ -33,7 +33,7 @@ function SearchBar({ placeholder, data }) {
         <input
           type="text"
           className="trend__control"
-          placeholder={placeholder}
+          placeholder="search twitter"
           value={wordEntered}
           onChange={handleFilter}
         />
