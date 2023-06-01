@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './SignIn.css';
 import {useNavigate} from 'react-router';
+import { FcGoogle } from "react-icons/fc";
+import { AiFillApple } from "react-icons/ai";
+import { BsTwitter } from "react-icons/bs";
 
 function SignIn(){
   const navigate = useNavigate();
@@ -58,14 +61,14 @@ function SignIn(){
     return(
         <div className="App">
         <div className='logo-box'>
-          <img src='./pngtree-twitter-social-media-round-icon-png-image_6315985.png' alt='logo'className='logo'/>
+           <BsTwitter />
           <h2>Sign in to Twitter</h2>
           <button>
-          <img src='./googlelogo.png' alt='logo'/>
+          <FcGoogle />
           Sign in with Google
           </button>
           <button>
-          <img src='./applelogo.png' alt='logo'/>
+          <AiFillApple />
           Sign in with Apple
           </button>
   
