@@ -100,7 +100,7 @@ export default function Signup() {
           style={{
             width:'70%'
           }}
-        />
+          />
         <h6>Use Phone instead</h6>
         {/* <TextField
           className={style.textfield}
