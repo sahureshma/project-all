@@ -1,7 +1,7 @@
 .posts{
     width: 50%;
     margin-left: 25%;
-    border-right: 1px solid white;
+    /* border-right: 1px solid rgb(207, 207, 216); */
 }
 .posts_home{
     width: 50%;
@@ -10,4 +10,6 @@
     padding: 15px ;
     font-weight: 650;
     border-bottom: 1px solid rgb(207, 207, 216);
+    background: white;
+    border-right: 1px solid rgb(207, 207, 216);
 }

@@ -1,11 +1,11 @@
 import React from 'react'
-import './HomePage.css'
+import './Sidebar.css'
 import { FaHome, FaHashtag, FaRegBell, FaTwitter, FaEnvelope, FaRegBookmark, FaClipboardList, FaUserAlt, FaMehBlank } from 'react-icons/fa'
-import Tweets from './Tweets'
+import Tweets from '../MiddleBar/Tweets'
 
 
 
-function HomePage() {
+function Sidebar() {
   return (
     <>
     <div className='sidebar'>
@@ -70,11 +70,11 @@ function HomePage() {
       </ul>
     </div>
     <div>
-      <Tweets/>
+      {/* <Tweets/> */}
     </div>
     </>
     
   )
 }
 
-export default HomePage
+export default Sidebar

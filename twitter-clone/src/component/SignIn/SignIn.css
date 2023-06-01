@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 
-body{
-  /* background: #3e65fe; */
+.App{
+  background: #3e65fe;
 }
 .logo-box{
   background: #fff;
