@@ -4,6 +4,7 @@ import CreateTweet from './MiddleBar/CreateTweet'
 import Tweets from './MiddleBar/Tweets'
 import Post from './MiddleBar/Post'
 
+
 function Home() {
   return (
     <div >
@@ -11,7 +12,7 @@ function Home() {
     <Tweets/>
     <CreateTweet/>
     <Post/>
-    
+   
     </div>
   )
 }
