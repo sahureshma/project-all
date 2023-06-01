@@ -31,7 +31,7 @@ export default function Signup() {
         return alert("Please enter valid email");
       }
       else if(!regexPassword.test(input.password)){
-        console.log(input.password);
+        console.log(input.password)
         return alert("Please enter valid Password");
       }
 

@@ -31,7 +31,7 @@ function SignIn(){
     if(userRegistrationdata && userRegistrationdata.email===email){
            if(userRegistrationdata.password===Password){
             alert("Login Successfully")    
-            navigate("/");
+            navigate("/home");
         } else {
           alert("Please Enter Correct Password");
         }
