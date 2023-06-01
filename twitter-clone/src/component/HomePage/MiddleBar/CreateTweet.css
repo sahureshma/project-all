@@ -1,8 +1,9 @@
 .create_container{
     padding-top: 60px;
     border-right: 1px solid  rgb(207, 207, 216);
-   border-bottom: 1px solid  rgb(207, 207, 216);
-
+    border-bottom: 1px solid  rgb(207, 207, 216);
+    margin-left: 25%;
+    width: 50%;
 }
 .first{
     display: flex;
@@ -37,7 +38,7 @@
     margin: 0 6px;
     font-size: 20px;
     cursor: pointer;
-    color: rgb(66, 187, 201);
+    color: rgba(0, 149, 255, 0.688);
 }
 .icon_create{
     width: 50%;
@@ -49,10 +50,11 @@
 }
 .btn_create a{
     color: #fff;
-    background: rgb(66, 187, 201);
+    background: rgba(0, 149, 255, 0.688);
     outline: none;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 50px;
 }
+
 
