@@ -10,13 +10,13 @@ function Sidebar() {
     <>
       <div className='sidebar'>
         <ul>
-          <li>
+          <li >
             <a>
               <FaTwitter className='icon logo' />
             </a>
           </li>
           <li>
-            <a>
+            <a >
               <FaHome className='icon logo' />
               Home
             </a>
@@ -64,7 +64,7 @@ function Sidebar() {
             </a>
           </li>
           <div className="sidebar_btn">
-            <a href=''>profile</a>
+            <a href=''>Tweet</a>
           </div>
 
         </ul>

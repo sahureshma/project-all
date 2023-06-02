@@ -9,8 +9,10 @@ function RightBar() {
   return (
     <div style={{display:"flex",flexDirection:"column",alignContent:"center",height:"auto",border:"1px solid lightgray"}}>
         <SearchBar data={Twitterdata}/>
+        <div>
         <Trending/>
         <Whotofollow/>
+        </div>
     </div>
   )
 }

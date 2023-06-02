@@ -27,15 +27,15 @@ function Whotofollow() {
   return (
     <>
     <div className={style.followcontainer}>
-        <h2 style={{margin:"5%"}}>Who to follow</h2>
+        <h2 style={{margin:"5% "}}>Who to follow</h2>
 
        {
             randomitem.map((item)=>(
                 <div className={style.Profile} key={item.id}>
                     <img className={style.profileimg} src={item.user_image}/>
-                    <h4 >
+                    <h4  >
                         <p className={style.name}>{item.user_name}</p>
-                        <p style={{margin:'8px 8px'}}>{item.user_country}</p>   
+                        <p style={{margin:'8px 8px', fontSize:"12px"}}>{item.user_country}</p>   
                     </h4> 
                     <button className={style.followbtn}>Follow</button>
                 </div>
