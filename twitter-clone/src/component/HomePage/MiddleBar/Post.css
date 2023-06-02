@@ -10,11 +10,10 @@
    align-items: center;
 }
 .first_img{
-   width: 50px;
+   width: 60px;
    height: 50px;
    overflow: hidden;
    border-radius: 50%;
-   border: 1px solid whitesmoke;
 
 }
 .first_img img{

@@ -1,15 +1,27 @@
-.posts{
+/* .posts{
     width: 50%;
-    margin-left: 25%;
-    /* border-right: 1px solid rgb(207, 207, 216); */
-}
-.posts_home{
+    border-right: 1px solid rgb(207, 207, 216);
+  } */
+  .posts_home{
     width: 50%;
     position: fixed;
+    height: 17vh;
     top: 0;
-    padding: 15px ;
+    background-color: rgba(255, 255, 255, 0.98);
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 650;
     border-bottom: 1px solid rgb(207, 207, 216);
-    background: white;
+    /* background: white; */
     border-right: 1px solid rgb(207, 207, 216);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.posts_home1{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10vw;
+    
 }

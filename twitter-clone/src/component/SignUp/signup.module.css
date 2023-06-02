@@ -3,14 +3,14 @@
     padding: 0px;
 }
 .body{
-    background-color: #359cf0;
+    background-color: #3e65fe;
     display: flex;
     justify-content: center;
     
     
 }
 h1{
-    text-align: center;
+    font-size: 2.5vh;
 }
 .signuppage{
     display: flex;
@@ -34,6 +34,7 @@ h1{
 h6{
     color: rgb(37, 37, 240);
     display: flex;
+    width: 3rem;
     height: 2vh;
     border: 1px solid black;
     margin-right: 0;

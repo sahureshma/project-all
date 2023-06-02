@@ -12,9 +12,7 @@ function Whotofollow() {
 
     const getRandomItem=()=>{
         const shuffleData = data.sort(()=>0.5-Math.random());
-        // console.log(shuffleData);
         const selecteditem=shuffleData.slice(0,4);
-        // console.log(selecteditem);
         setRandomitem(selecteditem);
     };
 
@@ -39,6 +37,7 @@ function Whotofollow() {
                         <p className={style.name}>{item.user_name}</p>
                         <p style={{margin:'8px 8px'}}>{item.user_country}</p>   
                     </h4> 
+                    <button className={style.followbtn}>Follow</button>
                 </div>
             ))
        }
