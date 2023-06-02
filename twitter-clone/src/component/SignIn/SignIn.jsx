@@ -12,6 +12,7 @@ function SignIn(){
   const[Password,setPassword]=useState("");
   const emailRegex=/(\<|^)[\w\d._%+-]+@(?:[\w\d-]+\.)+(\w{2,})(\>|$)/;
   const PasswordRegex=/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
   const handleEmailchange= (event)=>{
     setEmail(event.target.value);
   };
@@ -21,10 +22,14 @@ function SignIn(){
   const handleSumbit= (event)=>{
     event.preventDefault();
  
+  // if(email=="" || password == ""){
+  //   return alert('Enter email id & password');
+  // }
+
   if(!emailRegex.test(email)){
   alert("enter valid Email id")
- } else
-   if (!PasswordRegex.test(Password)){
+ } 
+ else if (!PasswordRegex.test(Password)){
     alert("enter valid password");
   } else{
     const userRegistrationdata=JSON.parse(
@@ -103,4 +108,3 @@ function SignIn(){
   };
   
   export default SignIn;
-  

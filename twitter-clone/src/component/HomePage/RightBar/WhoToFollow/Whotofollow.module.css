@@ -4,35 +4,49 @@
 }
 .followcontainer{
     height: auto;
-    width: 25%;
-    border: 1px solid;
+    width: 80%;
     border-radius: 2vw;
-   
-    
+    background-color: hsla(230, 5%, 92%, 1);  
+    margin-left: 3.5vw;
 }
+
 .Profile{
 display: flex;
 height: 12vh;
 width: 90%;
 align-items: center;
-border: 1px solid;
-margin:2% 5%
+margin:2% 5%;
+justify-content: space-around;
+}
+.Profile:hover{
+    background-color: hsla(230, 2%, 82%, 1);
+}
+.profile-folloebtn{
+    justify-content: flex-end;
+
 }
 
 .profileimg{
     display: flex;
     border: 2vw solid;
-    border-width: 0.5vw;
+    border-width: 0.3vw;
     border-radius: 50%;
     height: 10vh;
-    margin-left: .35vw;
-    /* align-items: normal; */
+    margin-left: .25vw;
+    align-items: normal;
 }
 .name{
     display: flex;
     flex-direction: column;
     margin: 0 0.5rem;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: bolder;
+}
+.followbtn{
+    border-radius: 25%;
+    background-color: rgb(19, 18, 18);
+    color: white;
+    width: 6vw;
+    height: 4vh;
     
 }

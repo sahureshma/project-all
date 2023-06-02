@@ -17,37 +17,31 @@ export default function Signup() {
     name:"",
     email:"",
     phone:"",
+    date:"",
     password:""
   })
 
 //signupbutton     //not empty field
   const handleData=(e)=>{
     e.preventDefault();
-    
-      if(!regexName.test(input.name)){
+      
+      if((!input.name && !input.phone && !input.password)){
+        return alert("Please Enter all fields");
+      }
+      else if(!regexName.test(input.name)){
         return alert("Please enter valid Name");
       }
       else if(!regexPhone.test(input.email)){
         return alert("Please enter valid email");
       }
+      else if(!regexPhone.test(input.phone)){
+        return alert("Please enter valid Mobile no.");
+      }
       else if(!regexPassword.test(input.password)){
         console.log(input.password)
-        return alert("Please enter valid Password");
+        return alert("Please enter valid Password(eg. abcdfhd2)");
       }
 
-
-    // if((!input.name && !input.phone && !input.password)){
-    //   return alert("Please Enter all fields");
-    // }
-    // else if(!input.name){
-    //   return alert("Please Enter Name");
-    // }
-    // else if(!input.email){
-    //   return alert("Please Enter Email id");
-    // }
-    // else if(!input.password){
-    //   return alert("Please Enter Password");
-    // }
     localStorage.setItem(input.email, JSON.stringify(input));
     alert("Sign-Up Successfully");
     navigate("/");                            // navigate to sign in page
@@ -60,7 +54,6 @@ export default function Signup() {
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
-      Validate
       autoComplete="off"
     >
 
@@ -100,9 +93,9 @@ export default function Signup() {
           style={{
             width:'70%'
           }}
-          />
-        <h6>Use Phone instead</h6>
-        {/* <TextField
+        />
+        {/* <h6><a >Use Phone instead</a></h6> */}
+        <TextField
           className={style.textfield}
           required
           id="filled-disabled"
@@ -110,16 +103,35 @@ export default function Signup() {
           type='Number'
           name="phone"
           value={input.phone}
-          // onChange={(e)=> 
-          //   setInput({
-          //     ...input,
-          //     [e.target.name]: e.target.value,})
-          //   }
+          onChange={(e)=> 
+            setInput({
+              ...input,
+              [e.target.name]: e.target.value,})
+            }
           variant="filled"
           style={{
             width:'70%',
           }}
-        /> */}
+        />
+
+        <TextField 
+          className={style.textfield}
+          required
+          id="filled-required"
+          label="DOB"
+          variant="filled"
+          type='Date'
+          name="date"
+          value={input.date}
+          onChange={(e)=> 
+            setInput({
+              ...input,
+              [e.target.name]: e.target.value,})
+            }
+            style={{
+            width:'70%'
+          }}
+        />
         
         <TextField
           className={style.textfield}
