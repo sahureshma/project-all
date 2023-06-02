@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './trending.module.css';
-import data from '../../../../tranding.json'
+import data from '../../../../trending.json'
 
 function Trending() {
      const[trendingData,setTrendingData]=useState([]);
