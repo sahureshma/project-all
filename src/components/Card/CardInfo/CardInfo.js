@@ -8,8 +8,8 @@ import {
   Type,
   X,
 } from "react-feather";
-import Editable from "../../Editable/Editable";
-import Modal from "../../Modal/Modal";
+import Editable from "../../molecules/Editable/Editable";
+import Modal from "../../molecules/Modal/Modal";
 
 
 import "./CardInfo.css";

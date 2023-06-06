@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { CheckSquare, Clock, MoreHorizontal } from "react-feather";
+import { setShowDropdown,setShowModal } from "../../store/slices/taskSlices";
 
-import Dropdown from "../../Dropdown/Dropdown";
+import Dropdown from "../organism/Dropdown/Dropdown";
 
 import "./Card.css";
 import CardInfo from "./CardInfo/CardInfo";
+import { useDispatch, useSelector } from "react-redux";
 
 function Card(props) {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-
+  const dispatch = useDispatch();
+  const showDropdown = useSelector((state)=>state.tasks.showDropdown);
+  const showModal = useSelector((state)=>state.tasks.showModal)
+  
   const { id, title, date, tasks, labels } = props.card;
 
   const formatDate = (value) => {
@@ -41,7 +44,7 @@ function Card(props) {
     <>
       {showModal && (
         <CardInfo
-          onClose={() => setShowModal(false)}
+          onClose={() => dispatch(setShowModal(false))}
           card={props.card}
           boardId={props.boardId}
           updateCard={props.updateCard}
@@ -52,7 +55,7 @@ function Card(props) {
         draggable
         onDragEnd={() => props.dragEnded(props.boardId, id)}
         onDragEnter={() => props.dragEntered(props.boardId, id)}
-        onClick={() => setShowModal(true)}
+        onClick={() => dispatch(setShowModal(true))}
       >
         <div className="card_top">
           <div className="card_top_labels">
@@ -66,14 +69,14 @@ function Card(props) {
             className="card_top_more"
             onClick={(event) => {
               event.stopPropagation();
-              setShowDropdown(true);
+              dispatch(setShowDropdown(true));
             }}
           >
             <MoreHorizontal />
             {showDropdown && (
               <Dropdown
                 class="board_dropdown"
-                onClose={() => setShowDropdown(false)}
+                onClose={() => dispatch(setShowDropdown(false))}
               >
                 <p onClick={() => props.removeCard(props.boardId,id)}>
                   Delete Card

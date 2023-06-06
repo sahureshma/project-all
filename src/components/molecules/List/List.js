@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { MoreHorizontal } from "react-feather";
+import { setShowDropdown } from "../../../store/slices/taskSlices";
 
-import Card from "../Card/Card";
-import Dropdown from "../../Dropdown/Dropdown";
+import Card from "../../Card/Card";
+import Dropdown from "../../organism/Dropdown/Dropdown";
 import Editable from "../Editable/Editable";
 
 import "./List.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function List(props) {
-  const [showDropdown, setShowDropdown] = useState(false);
+
+  const dispatch = useDispatch();
+  const showDropdown = useSelector((state)=>state.tasks.showDropdown)
 
   return (
     <div className="board">
@@ -19,7 +23,7 @@ function List(props) {
         </p>
         <div
           className="board_header_title_more"
-          onClick={() => setShowDropdown(true)}
+          onClick={() => dispatch(setShowDropdown(true))}
         >
           <MoreHorizontal />
           {showDropdown && (
