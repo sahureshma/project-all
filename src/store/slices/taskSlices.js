@@ -4,16 +4,20 @@ const taskSlice = createSlice({
   name: 'tasks',
   initialState: {
     inputValue: '',
-    todoLists: [], // Renamed from todoList
-    show: false,
+    todoLists: [], 
+    showDropdown: false,
     isDialogueOpen: false,
+    targetCard:{
+        bid: "",
+        cid: "",
+    },
   },
   reducers: {
     setInputValue: (state, action) => {
       state.inputValue = action.payload;
     },
     setTodoList: (state) => {
-      state.todoList.push(state.inputValue); // Changed to push the inputValue to todoLists array
+      state.todoLists.push(state.inputValue); // Changed to push the inputValue to todoLists array
       state.inputValue = '';
     },
     deleteTodoList: (state, action) => {
@@ -21,19 +25,23 @@ const taskSlice = createSlice({
       state.todoLists.splice(index, 1);
     },
     addTodoList: (state) => {
-      state.todoLists.push({ title: state.inputValue, tasks: [] }); // Changed to add an object with title and tasks properties to todoLists
+      state.todoLists.push({ title: state.inputValue, tasks: [] }); 
       state.inputValue = '';
     },
-    setShow: (state) => {
-      state.show = !state.show;
+    setShowDropdown: (state) => {
+      state.showDropdown = !state.showDropdown;
     },
-    setIsDialogueOpen: (state) => {
-      state.isDialogueOpen = !state.isDialogueOpen;
+    setShowModal: (state,action) => {
+      state.showModal = action.payload;
     },
     addTaskToList: (state, action) => {
       const { listIndex, task } = action.payload;
       state.todoLists[listIndex].tasks.push(task); // Added new reducer to add tasks to a specific list
     },
+    setTargetCard:(state,action)=>{
+        state.targetCard = action.payload
+    },
+
   },
 });
 
@@ -42,9 +50,11 @@ export const {
   setTodoList,
   deleteTodoList,
   addTodoList,
-  setShow,
+  setShowDropdown,
   setIsDialogueOpen,
   addTaskToList,
+  setTargetCard,
+  setShowModal
 } = taskSlice.actions;
 
 export default taskSlice.reducer;

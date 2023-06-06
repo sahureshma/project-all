@@ -1,19 +1,22 @@
+import Board from "./components/molecules/board/Board";
+import Navbar from "./components/organism/navbar/navbar";
+import Tasks from "./components/organism/tasks/tasks";
+import { Provider } from 'react-redux'
+import store from "./store/store";
 
-import { Provider } from 'react-redux';
-import './App.css';
-import store from './store/store';
-import TodoTasks from './components/organism/todoTasks/todoTasks';
 
-function App() {
-  return (
+
+export default function App(){
+
+
+
+  return(
     <div className="App">
     <Provider store={store}>
-    <TodoTasks/>
-
+    <Board/>
     </Provider>
-     
-    </div>
-  );
-}
 
-export default App;
+
+    </div>
+  )
+}
