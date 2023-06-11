@@ -1,64 +1,64 @@
 import React, { useState } from "react";
-import { MoreHorizontal } from "react-feather";
-import { setShowDropdown } from "../../../store/slices/taskSlices";
-
-import Card from "../../Card/Card";
-import Dropdown from "../../organism/Dropdown/Dropdown";
-import Editable from "../Editable/Editable";
-
-import "./List.css";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import Styles from './list.module.css'
+import { setListData } from '../../../store/slices/taskSlices'
+import CloseIcon from "@mui/icons-material/Close";
+import uuid from "react-uuid";
 import { useDispatch, useSelector } from "react-redux";
 
-function List(props) {
+const List = () => {
+    const [listName, setListName] = useState("");
+    const [isBtn, setIsBtn] = useState(true);
 
-  const dispatch = useDispatch();
-  const showDropdown = useSelector((state)=>state.tasks.showDropdown)
+    const dispatch = useDispatch();
+    const listData = useSelector((state) => state.tasks.listData)
 
-  return (
-    <div className="board">
-      <div className="board_header">
-        <p className="board_header_title">
-          {props.board?.title}
-          <span>{props.board?.cards?.length ||0}</span>
-        </p>
-        <div
-          className="board_header_title_more"
-          onClick={() => dispatch(setShowDropdown(true))}
-        >
-          <MoreHorizontal />
-          {showDropdown && (
-            <Dropdown
-              class="board_dropdown"
-              onClose={() => setShowDropdown(false)}
-            >
-              <p onClick={() => props.removeBoard()}>Delete Board</p>
-            </Dropdown>
-          )}
+    function handleClick() {
+        setIsBtn(!isBtn);
+    }
+
+    function handleAddList() {
+        let Lname = listName.trim();
+        if (Lname !== "") {
+            let Id = uuid();
+
+            const listObj = {
+                id: Id,
+                listName: listName,
+                task: [],
+            };
+
+            setListName("");
+            dispatch(setListData([...listData, listObj]));
+            localStorage.setItem('List', JSON.stringify([...listData, listObj]));
+        }
+    }
+
+    return (
+        <div className={Styles.Main}>
+            {isBtn ? (
+                <div>
+                    <button onClick={handleClick} className={Styles.btn}>
+                        <AddOutlinedIcon /> Add a List{" "}
+                    </button>
+                </div>
+            ) : (
+                <div className={Styles.Toggled}>
+                    <input
+                        value={listName}
+                        onChange={(e) => setListName(e.target.value)}
+                        type="text"
+                        placeholder="Enter List name "
+                    />
+                    <div className={Styles.buttonclose}>
+                        <button onClick={handleAddList}>Add List</button>
+                        <CloseIcon onClick={handleClick} />
+                    </div>
+                </div>
+            )}
         </div>
-      </div>
-      <div className="board_cards custom-scroll">
-        {props.board?.cards?.map((item) => (
-          <Card
-            key={item.id}
-            card={item}
-            boardId={props.board.id}
-            removeCard={props.removeCard}
-            dragEntered={props.dragEntered}
-            dragEnded={props.dragEnded}
-            updateCard={props.updateCard}
-          />
-       
-        ))}
-        <Editable
-          text="+ Add Card"
-          placeholder="Enter Card Title"
-          displayClass="board_add-card"
-          editClass="board_add-card_edit"
-          onSubmit={(value) => props.addCard(props.board?.id, value)}
-        />
-      </div>
-    </div>
-  );
-}
+
+    );
+};
 
 export default List;
