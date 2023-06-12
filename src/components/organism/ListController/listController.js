@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Styles from "./listController.module.css";
-import Task from '../task/task'
+import Card from "../card/card";
 import { setListData } from "../../../store/slices/taskSlices";
 
 import { useSelector, useDispatch } from "react-redux";
+import { Droppable } from "react-beautiful-dnd";
 
 const ListController = () => {
   const [inputVisible, setInputVisible] = useState(false);
@@ -40,35 +41,41 @@ const ListController = () => {
   return (
     <div style={{ display: "flex" }}>
       {listData.map((ele, index) => (
-        <div
-          className={Styles.mainCard}
-          key={ele.id}
-        >
-          <div className={Styles.Upper}>
-            {inputVisible ? (
-              <form onSubmit={() => setInputVisible(false)}>
-                <input
-                  className={Styles.ListName}
-                  type="text"
-                  placeholder={ele.listName}
-                  onChange={(e) => handleChange(e, ele.id)}
-                />
-                <DeleteIcon
-                  onClick={() => handleDelete(ele.id)}
-                  fontSize="small"
-                />
-              </form>
-            ) : (
-              <p
-                style={{ width: "100%" }}
-                onClick={() => setInputVisible(true)}
-              >
-                <strong>{ele.listName}</strong>
-              </p>
-            )}
-          </div>
-          <Task id={ele.id} Lname={ele.listName} task={ele.task} />
-        </div>
+        <Droppable key={ele.id} index={index} droppableId={ele.id}>
+          {(provided) => (
+            <div
+              className={Styles.mainCard}
+              key={ele.id}
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
+              <div className={Styles.Upper}>
+                {inputVisible ? (
+                  <form onSubmit={() => setInputVisible(false)}>
+                    <input
+                      className={Styles.ListName}
+                      type="text"
+                      placeholder={ele.listName}
+                      onChange={(e) => handleChange(e, ele.id)}
+                    />
+                    <DeleteIcon
+                      onClick={() => handleDelete(ele.id)}
+                      fontSize="small"
+                    />
+                  </form>
+                ) : (
+                  <p
+                    style={{ width: "100%" }}
+                    onClick={() => setInputVisible(true)}
+                  >
+                    <strong>{ele.listName}</strong>
+                  </p>
+                )}
+              </div>
+              <Card id={ele.id} Lname={ele.listName} task={ele.task} />
+            </div>
+          )}
+        </Droppable>
       ))}
     </div>
   );
