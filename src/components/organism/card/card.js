@@ -9,6 +9,7 @@ import ListEdit from '../../organism/listEditable/listEditable'
 import AddCardIcon from '@mui/icons-material/AddCard';
 import uuid from "react-uuid";
 import { useDispatch, useSelector } from "react-redux";
+import { Draggable } from "react-beautiful-dnd";
 
 const Card = (props) => {
   const [title, setTitle] = useState("");
@@ -83,13 +84,21 @@ const Card = (props) => {
       <div className={Styles.TaskBoundary}>
         {task && task.length > 0
           ? task.map((ele, index) => (
-              <div
-                className={Styles.List}
-                key={ele.id}
-              >
-                <ListEdit title={ele.title} id={ele.id} cardId={Id} />
-              </div>
-            ))
+            <Draggable key={ele.id} draggableId={ele.id} index={index}>
+              {(provided) => (
+                <div
+                  className={Styles.List}
+                  key={ele.id}
+                  ref={provided.innerRef}
+                  {...provided.draggableProps}
+                  {...provided.dragHandleProps}
+                >
+                  <ListEdit title={ele.title} id={ele.id} cardId={Id} />
+                </div>
+              )}
+            </Draggable>
+
+          ))
           : null}
       </div>
       {!addItem ? (

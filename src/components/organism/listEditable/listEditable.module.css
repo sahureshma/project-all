@@ -13,8 +13,12 @@
   .editInput {
     height: 100%;
     font-size: small;
+    width: 180px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
+    padding: 0.5rem;
+    border: 1px solid rgb(235, 219, 219);
+    outline: none;
     border-radius: 10%;
     border-width: 3px;
     font-style: normal;

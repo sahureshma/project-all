@@ -51,7 +51,7 @@ const ListEdit = (props) => {
     taskss.task = Task;
     console.log(taskss);
     input.splice(index, 1, taskss);
-    setListData(input);
+    dispatch(setListData(input));
     localStorage.setItem("List", JSON.stringify(input));
     setIsInput(!isInput);
   }
