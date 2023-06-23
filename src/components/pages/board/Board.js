@@ -1,4 +1,4 @@
-import List from '../../molecules/list/list'
+import List from '../../molecules/List/List';
 import ListController from '../../organism/ListController/listController';
 import Navbar from '../../organism/navbar/navbar'
 import { DragDropContext } from 'react-beautiful-dnd';
