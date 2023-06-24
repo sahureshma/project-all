@@ -1,0 +1,32 @@
+.prices {
+    width: 100%;
+    padding: 80px 0;
+  }
+  
+  .price {
+    padding: 20px;
+    text-align: center;
+  }
+  .price__img {
+    width: 100%;
+  }
+  
+  .price__img img {
+    width: 250px;
+  }
+  
+  .price__heading {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+  .price__text {
+    margin-top: 15px;
+    color: #888888;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
+  .price_rs {
+    font-size: 30px;
+    margin-top: 15px;
+  }

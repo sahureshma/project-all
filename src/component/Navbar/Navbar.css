@@ -1,0 +1,19 @@
+.navbar__ul {
+    width: 90vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navbar__ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .logo {
+    width: 40%;
+  }
+  .logo img {
+    width: 220px;
+  }

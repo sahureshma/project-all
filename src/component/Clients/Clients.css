@@ -1,0 +1,22 @@
+.clients {
+    width: 100%;
+    padding: 100px 0;
+    background: url("/public/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+  }
+  
+  .client {
+    text-align: center;
+  }
+  .client h1 {
+    font-style: 45px;
+  }
+  .client p {
+    font-style: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  
