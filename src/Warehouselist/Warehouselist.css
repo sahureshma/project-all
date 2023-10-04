@@ -1,0 +1,28 @@
+button{
+   padding: 10px 20px;
+   font-size: 16px;
+   background-color: #15ff00;
+   border:black;
+  border-radius: 4px;
+  cursor: "pointer";
+  color:black;
+ 
+ 
+}
+.close{
+  background-color: rgb(0, 255, 30);
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.edit{
+  background-color: rgb(0, 255, 17);
+  justify-content: space-between;
+  border-radius: 20px;
+}
+.list{
+  align-items: center;
+  padding-left: 40%;
+  background-color: aqua;
+  height: 100vh;
+  border: 2px solid black;
+}
